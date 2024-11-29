@@ -2,6 +2,7 @@
   "name": "ha-ai-controller-frontend",
   "version": "1.0.0",
   "private": true,
+  "homepage": "/frontend_es5/ha_ai_controller/",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
