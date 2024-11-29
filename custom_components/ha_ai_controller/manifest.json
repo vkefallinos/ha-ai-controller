@@ -1,0 +1,11 @@
+{
+  "domain": "ha_ai_controller",
+  "name": "Home Assistant AI Controller",
+  "documentation": "https://github.com/yourusername/ha-ai-controller",
+  "dependencies": ["frontend"],
+  "codeowners": ["@yourusername"],
+  "requirements": ["anthropic"],
+  "config_flow": true,
+  "version": "1.0.0",
+  "iot_class": "cloud_polling"
+}

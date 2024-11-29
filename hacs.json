@@ -1,0 +1,8 @@
+{
+  "name": "Home Assistant AI Controller",
+  "render_readme": true,
+  "domain": "ha_ai_controller",
+  "documentation": "https://github.com/yourusername/ha-ai-controller",
+  "issue_tracker": "https://github.com/yourusername/ha-ai-controller/issues",
+  "homeassistant": "2024.1.0"
+}
