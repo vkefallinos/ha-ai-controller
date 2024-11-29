@@ -8,10 +8,10 @@ from homeassistant.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 DOMAIN = "ha_ai_controller"
-PANEL_URL = f"/frontend_es5/ha_ai_controller/"  # Added trailing slash
+PANEL_URL = f"/frontend_es5/ha_ai_controller/"
 PANEL_TITLE = "AI Controller"
 PANEL_ICON = "mdi:robot"
-PANEL_NAME = "ha-ai-controller-panel"
+PANEL_NAME = "ha-ai-controller-panel"  # This matches our custom element name
 
 async def async_register_panel(hass: HomeAssistant) -> None:
     """Register the panel."""
@@ -23,7 +23,7 @@ async def async_register_panel(hass: HomeAssistant) -> None:
 
     # Register frontend resources
     hass.http.register_static_path(
-        f"{PANEL_URL}static",  # Removed extra slash
+        f"{PANEL_URL}static",
         os.path.join(frontend_path, "static"),
         True
     )
@@ -34,11 +34,16 @@ async def async_register_panel(hass: HomeAssistant) -> None:
         _LOGGER.error("Main.js not found: %s", main_js_path)
         return
 
+    # Copy the new main.js file
+    import shutil
+    new_main_js = os.path.join(frontend_path, "static/js/main.c17750e1.js")
+    shutil.copy2(new_main_js, main_js_path)
+
     await panel_custom.async_register_panel(
         hass,
         webcomponent_name=PANEL_NAME,
         frontend_url_path=DOMAIN,
-        module_url=f"{PANEL_URL}static/js/main.js",  # Removed extra slash
+        module_url=f"{PANEL_URL}static/js/main.js",
         sidebar_title=PANEL_TITLE,
         sidebar_icon=PANEL_ICON,
         require_admin=False,

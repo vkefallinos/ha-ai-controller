@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/frontend_es5/ha_ai_controller/static/js/main.0ede3b86.js",
+    "main.js": "/frontend_es5/ha_ai_controller/static/js/main.c17750e1.js",
     "index.html": "/frontend_es5/ha_ai_controller/index.html",
-    "main.0ede3b86.js.map": "/frontend_es5/ha_ai_controller/static/js/main.0ede3b86.js.map"
+    "main.c17750e1.js.map": "/frontend_es5/ha_ai_controller/static/js/main.c17750e1.js.map"
   },
   "entrypoints": [
-    "static/js/main.0ede3b86.js"
+    "static/js/main.c17750e1.js"
   ]
 }

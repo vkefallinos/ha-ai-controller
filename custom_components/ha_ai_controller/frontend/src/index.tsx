@@ -10,15 +10,21 @@ const theme = createTheme({
   },
 });
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+class HAClaudePanel extends HTMLElement {
+  connectedCallback() {
+    const mountPoint = document.createElement('div');
+    this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
 
-root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
-);
+    const root = ReactDOM.createRoot(mountPoint);
+    root.render(
+      <React.StrictMode>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
+      </React.StrictMode>
+    );
+  }
+}
+
+customElements.define('ha-ai-controller-panel', HAClaudePanel);
