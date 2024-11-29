@@ -2,9 +2,9 @@
   "domain": "ha_ai_controller",
   "name": "Home Assistant AI Controller",
   "documentation": "https://github.com/yourusername/ha-ai-controller",
-  "dependencies": ["frontend"],
+  "dependencies": ["frontend", "http", "panel_custom"],
   "codeowners": ["@yourusername"],
-  "requirements": ["anthropic"],
+  "requirements": ["anthropic>=0.7.0", "aiohttp>=3.8.0", "voluptuous>=0.13.0"],
   "config_flow": true,
   "version": "1.0.0",
   "iot_class": "cloud_polling"
